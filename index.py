@@ -9,7 +9,7 @@ def index():
 
 @app.route('/create_database')
 def create_database():
-    conn = sqlite3.connect('flask/api/mydatabase.db')
+    conn = sqlite3.connect('mydatabase.db')
     c = conn.cursor()
     c.execute('''CREATE TABLE users
                  (ID INT PRIMARY KEY     NOT NULL,
@@ -19,12 +19,12 @@ def create_database():
     conn.close()
     return 'Database created successfully!'
 
-if __name__ == '__main__':
+if __name__ == '__index__':
     app.run()
 
 
     def index():
-        conn = sqlite3.connect('flask/api/mydatabase.db')
+        conn = sqlite3.connect('mydatabase.db')
         c = conn.cursor()
         c.execute('SELECT * FROM users')
         rows = c.fetchall()
@@ -32,5 +32,5 @@ if __name__ == '__main__':
         return render_template('index.html', rows=rows)
 
 
-    if __name__ == '__main__':
+    if __name__ == '__index__':
         app.run()
