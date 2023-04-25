@@ -26,7 +26,7 @@ def query():
     c.execute('SELECT * FROM users')
     rows = c.fetchall()
     conn.close()
-    return render_template('index.html', rows=rows)
+    return render_template('./templates/index.html', rows=rows)
 
 
 if __name__ == '__index__':
