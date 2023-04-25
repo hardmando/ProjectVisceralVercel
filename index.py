@@ -19,9 +19,6 @@ def create_database():
     conn.close()
     return 'Database created successfully!'
 
-if __name__ == '__index__':
-    app.run()
-
 @app.route('/create_query')
 def query():
     conn = sqlite3.connect('mydatabase.db')
