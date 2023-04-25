@@ -23,14 +23,14 @@ if __name__ == '__index__':
     app.run()
 
 
-    def index():
-        conn = sqlite3.connect('mydatabase.db')
-        c = conn.cursor()
-        c.execute('SELECT * FROM users')
-        rows = c.fetchall()
-        conn.close()
-        return render_template('index.html', rows=rows)
+def query():
+    conn = sqlite3.connect('mydatabase.db')
+    c = conn.cursor()
+    c.execute('SELECT * FROM users')
+    rows = c.fetchall()
+    conn.close()
+    return render_template('index.html', rows=rows)
 
 
-    if __name__ == '__index__':
-        app.run()
+if __name__ == '__index__':
+    app.run()
