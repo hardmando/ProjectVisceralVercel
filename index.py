@@ -22,7 +22,7 @@ def create_database():
 if __name__ == '__index__':
     app.run()
 
-
+@app.route('/create_query')
 def query():
     conn = sqlite3.connect('mydatabase.db')
     c = conn.cursor()
