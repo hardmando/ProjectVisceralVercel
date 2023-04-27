@@ -6,6 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     return render_template("index.html")
+    url_for('static', filename='index.css')
 
 def create_database():
     conn = sqlite3.connect('mydatabase.db')
