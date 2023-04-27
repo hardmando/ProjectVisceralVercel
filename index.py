@@ -2,7 +2,6 @@ from flask import Flask, render_template
 import sqlite3
 
 app = Flask(__name__)
-url_for('static', filename='index.css')
 
 @app.route('/')
 def index():
