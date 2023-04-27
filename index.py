@@ -5,9 +5,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Hello, World!'
+    return render_template("index.html")
 
-@app.route('/create_database')
 def create_database():
     conn = sqlite3.connect('mydatabase.db')
     c = conn.cursor()
@@ -19,7 +18,6 @@ def create_database():
     conn.close()
     return 'Database created successfully!'
 
-@app.route('/create_query')
 def query():
     conn = sqlite3.connect('mydatabase.db')
     c = conn.cursor()
